@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Data Set</title>
+
+  <!-- Load Bulma from CDN (consider saving it to repository instead) -->
+  <!-- https://bulma.io/ -->
+  <link rel="stylesheet" href=https://jenil.github.io/bulmaswatch/pulse/bulmaswatch.min.css>
+  <link href="data.css" rel="stylesheet" type="text/css">
+
+  <!-- Load Font Awesome 5 (free) icons -->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+
+  <!-- Page header -->
+  <!-- https://bulma.io/documentation/layout/hero/ -->
+  <section class="hero is-primary is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <!-- TODO: Change title -->
+        <h1 class="title">Data Set</h1>
+        <!-- TODO: Change subtitle -->
+        <h2 class="subtitle">SFPD 2018 to Present Data</h2>
+      </div>
+    </div>
+  </section>
+  <!-- End page header -->
+
+  <!-- Page navigation -->
+  <!-- https://bulma.io/documentation/components/navbar/ -->
+  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+
+        <a class="navbar-item" href="index.html">
+          <span class="icon"><i class="fas fa-home"></i></span>
+          <span>Home</span>
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="main-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="main-menu" class="navbar-menu has-text-weight-medium">
+        <!-- Left navbar items -->
+        <div class="navbar-start">
+          <a class="navbar-item is-active" href="dataSet.html" title="Data">
+            <span class="icon"><i class="fas fa-table"></i></span>
+            <span>Data</span>
+          </a>
+
+          <a class="navbar-item" href="prototype.html">
+            <span class="icon"><i class="fas fa-map-marked-alt"></i></span>
+            <span>Prototype</span>
+          </a>
+        </div>
+      </div>
+      <!-- Right navbar items -->
+      <div class="navbar-end">
+        <!-- TODO: Update as needed -->
+        <a class="navbar-item" href="about.html" title="About">
+          <span class="icon"><i class="fas fa-tasks"></i></span>
+          <span>About</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- End page navigation -->
+
+<section class="section">
+  <div class="container">
+    <!-- Begin page content -->
+    <div class="content">
+
+      <h2 id="data">Data</h2>
+
+      <p>The data set was taken from <a href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783"> DataSF Police Department Incident Reports: 2018 to Present</a>. The data was exported from the
+        website on 4/11/2020, to be investigated further.
+      The data set has 337K Rows and 26 columns. Each row is an Incident Record. The data gets published daily, and changes hourly. <br>
+      To better understand the incident codes, this  <a href="https://data.sfgov.org/widgets/ci9u-8awy">Reference site</a> was used.</p>
+
+      <h3>About the data</h3>
+      <blockquote>
+        <p>
+          This dataset includes police incident reports filed by officers and by individuals through self-service online reporting for non-emergency cases. Reports included are
+          those for incidents that occurred starting January 1, 2018 onward and have been approved by a supervising officer.
+          Disclaimer: The San Francisco Police Department does not guarantee the accuracy, completeness, timeliness or correct
+          sequencing of the information as the data is subject to change as modifications and updates are completed.
+        </p>
+      </blockquote>
+
+      <h3>License</h3>
+
+      <blockquote>
+        <p>
+          This data is made available under the	Open Data Commons Public Domain Dedication and License.
+        </p>
+        </blockquote>
+
+
+          <h3 id="wrangling">Wrangling</h3>
+
+          <p>So far, no clear wrangling has been done other than exporting the data from DataSF, mainly because I'm still settling on
+            a a particular view and subset of the data.</p>
+
+            <h3 id="columns_used">Columns</h3>
+
+            <div class="table-container">
+                <table class="table is-bordered is-striped is-hoverable">
+                    <thead><tr><th title="Field #1">Column Name</th>
+                    <th title="Field #2">Description</th>
+                    <th title="Field #3">Type</th>
+                    </tr></thead>
+                    <tbody><tr>
+                    <td>Incident Datetime</td>
+                    <td>The date and time when the incident occurred</td>
+                    <td> Floating Timestamp</td>
+                    </tr>
+                    <tr>
+                    <td>Incident Date</td>
+                    <td>	The date the incident occurred</td>
+                    <td> Floating Timestamp</td>
+                    </tr>
+                    <tr>
+                    <td>Incident Time</td>
+                    <td>	The time the incident occurred</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Incident Year</td>
+                    <td> The year the incident occurred provided as a convenience for filtering</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Incident Day of Week</td>
+                    <td> The day of week the incident occurred</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Report Datetime</td>
+                    <td> Distinct from Incident Datetime; Report Datetime is when the report was filed</td>
+                    <td> Floating Timestamp</td>
+                    </tr>
+                    <tr>
+                    <td>Row ID</td>
+                    <td> An identifier unique to the dataset</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Incident ID</td>
+                    <td> This is the system generated identifier for incident reports. An incident report can have multiple incident codes associated. Thus; this identifier; while unique to the report; will be duplicated within this dataset to represent those 1 to many relationships when they exist. Incident IDs and Incident Numbers both uniquely identify reports; but Incident Numbers are what are used and referenced in the cases and report documents.</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Incident Number</td>
+                    <td>The number issued on the report; sometimes interchangeably referred to as the Case Number</td>
+                    <td> Test</td>
+                    </tr>
+                    <tr>
+                    <td>CAD Number</td>
+                    <td> The Computer Aided Dispatch is the system used by the Department of Emergency Management (DEM) to dispatch officers and other public safety personnel. CAD Numbers are assigned by the DEM system and linked to relevant incident reports (Incident Number). Not all Incidents will have a CAD Number. Reports filed online via Coplogic ( see field: Filed Online) will not have a CAD Number and certain other reports not filed through the DEM system will also not have these numbers.
+                    </td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Report Type Code</td>
+                    <td> A system code for report types; these have corresponding descriptions within the dataset.</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Report Type Description</td>
+                    <td> The description of the report type; can be one of: Initial; Initial Supplement; Vehicle Initial; Vehicle Supplement; Coplogic Initial; Coplogic Supplement</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Filed Online</td>
+                    <td> Police reports can be filed online for non-emergency cases. These reports are entered via a self-service system called Coplogic (http://sanfranciscopolice.org/reports). This field is a boolean indicating the record was filed this way. These are also indicated in the Report Type Code and Report Type Description fields.</td>
+                    <td> Checkbox</td>
+                    </tr>
+                    <tr>
+                    <td>Incident Code</td>
+                    <td> Incident Codes are the system codes to describe a type of incident. A single incident report can have one or many incident types associated. In those cases you will see multiple rows representing a unique combination of the Incident ID and Incident Code.</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Incident Category</td>
+                    <td> A category mapped on to the Incident Code used in statistics and reporting. Mappings provided by the Crime Analysis Unit of the Police Department.</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Incident Subcategory</td>
+                    <td> A subcategory mapped on to the Incident Code used in statistics and reporting. These nest inside the Category field. Mappings provided by the Crime Analysis Unit of the Police Department.</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Incident Description</td>
+                    <td> The description of the incident that corresponds with the Incident Code. These are generally self-explanatory.</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Resolution</td>
+                    <td> The resolution of the incident at the time of the report. Can be one of: - Cite or Arrest Adult - Cite or Arrest Juvenile - Exceptional Adult - Exceptional Juvenile - Open or Active - Unfounded Note: once a report is filed the resolution does not change on the filed report later. Updates to a case will be issued later as Supplemental reports if there&#39;s a status change.</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Intersection</td>
+                    <td> The 2 or more street names that intersect closest to the original incident separated by a forward slash (\). Note; the possible intersections will only include those that satisfy the privacy controls</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>CNN</td>
+                    <td> The unique identifier of the intersection for reference back to other related basemap datasets. For more on the Centerline Node Network see https://datasf.gitbooks.io/draft-publishing-standards/content/basemap/street-centerlines-nodes.html</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Police District</td>
+                    <td> The Police District reflecting current boundaries (boundaries changed in 2015). Reference here: https://data.sfgov.org/d/wkhw-cjsf Please note these are entered by officers and not based on the point.</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Analysis Neighborhood</td>
+                    <td> The Department of Public Health and the Mayor&#39;s Office of Housing and Community Development; with support from the Planning Department; created 41 neighborhoods by grouping 2010 Census tracts; using common real estate and resident definitions for the purpose of providing consistency in the analysis and reporting of socio-economic; demographic; and environmental data; and data on City-funded programs and services. They are not codified in Planning Code nor Administrative Code. This boundary is produced by assigning Census tracts to neighborhoods based on existing neighborhood definitions used by Planning and MOHCD. A qualitative assessment was made to identify the appropriate neighborhood for a given tract based on understanding of population distribution and significant landmarks. Once all tracts have been assigned a neighborhood; the tracts were dissolved to produce these boundaries. See reference: https://data.sfgov.org/d/p5b7-5n3h Please note this boundary is assigned based on the intersection; it may differ from the boundary the incident actually occurred within.</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Supervisor District</td>
+                    <td> There are 11 members elected to the Board of Supervisors in San Francisco; each representing a geographic district. The Board of Supervisors is the legislative body for San Francisco. The districts are numbered 1 through 11. See reference: https://data.sfgov.org/d/8nkz-x4ny Please note this boundary is assigned based on the intersection; it may differ from the boundary the incident actually occurred within.</td>
+                    <td> Text</td>
+                    </tr>
+                    <tr>
+                    <td>Latitude</td>
+                    <td> The latitude coordinate in WGS84; spatial reference is EPSG:4326. Note; will be blank where geocoding was not possible.</td>
+                    <td> Number</td>
+                    </tr>
+                    <tr>
+                    <td>Longitude</td>
+                    <td> The longitude coordinate in WGS84; spatial reference is EPSG:4326. Note; will be blank where geocoding was not possible.</td>
+                    <td> Number</td>
+                    </tr>
+                    <tr>
+                    <td>point</td>
+                    <td> The point geometry used for mapping features in the open data portal platform. Latitude and Longitude are provided separately as well as a convenience. Note; will be blank where geocoding was not possible.</td>
+                    <td> Location</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+               </div>
+
+
+
+              </div>
+              <!-- End page content -->
+            </div>
+          </section>
+
+          <!-- Page footer -->
+          <!-- https://bulma.io/documentation/layout/footer/ -->
+          <footer class="footer">
+            <div class="content has-text-centered is-size-7">
+              <p>
+                <a href="#top">
+                  <span class="fas fa-arrow-up"></span>
+                  <span class="has-text-weight-medium">Back to Top</span>
+                </a>
+              </p>
+
+              <p>
+                <!-- TODO: Change to link to your Github repository -->
+                <a href="https://github.com/usf-cs360-spring2020/project-etbascur" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+                  <i class="fab fa-github-alt"></i>&nbsp;<strong>Github</strong>
+                </a>
+
+                <a href="https://fontawesome.com/" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+                  <i class="fab fa-font-awesome"></i>&nbsp;<strong>FontAwesome</strong>
+                </a>
+
+                <a href="https://bulma.io" class="button is-small">
+                  <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128" height="24">
+                </a>
+              </p>
+            </div>
+          </footer>
+          <!-- End page footer -->
+
+          <!-- Mobile menu responsiveness -->
+          <!-- https://bulma.io/documentation/components/navbar/ -->
+          <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            if ($navbarBurgers.length > 0) {
+              $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                  const target = el.dataset.target;
+                  const $target = document.getElementById(target);
+                  el.classList.toggle('is-active');
+                  $target.classList.toggle('is-active');
+                });
+              });
+            }
+          });
+          </script>
+          <!-- End mobile menu responsiveness -->
+        </body>
+
+        </html>

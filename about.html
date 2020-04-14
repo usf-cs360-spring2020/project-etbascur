@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- TODO: Change title -->
-    <title>Home Landing Page</title>
+    <title>About</title>
 
     <!-- Load Bulma from CDN (consider saving it to repository instead) -->
     <!-- https://bulma.io/ -->
@@ -23,9 +23,9 @@
     <div class="hero-body">
       <div class="container">
         <!-- TODO: Change title -->
-        <h1 class="title">Data Visualization</h1>
+        <h1 class="title">About</h1>
         <!-- TODO: Change subtitle -->
-        <h2 class="subtitle">SFPD</h2>
+        <h2 class="subtitle">About me</h2>
       </div>
     </div>
   </section>
@@ -36,7 +36,7 @@
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item is-active" href="index.html">
+        <a class="navbar-item" href="index.html">
           <span class="icon"><i class="fas fa-home"></i></span>
           <span>Home</span>
         </a>
@@ -67,13 +67,12 @@
         <!-- Right navbar items -->
         <div class="navbar-end">
           <!-- TODO: Update as needed -->
-          <a class="navbar-item" href="about.html" title="About">
+          <a class="navbar-item is-active" href="about.html" title="About">
             <span class="icon"><i class="fas fa-tasks"></i></span>
             <span>About</span>
           </a>
         </div>
       </div>
-    </div>
   </nav>
   <!-- End page navigation -->
 
@@ -81,31 +80,68 @@
     <div class="container">
       <!-- Begin page content -->
       <div class="content">
-        <h1 class="title">
-          <!-- TODO: Change page title -->
-          SFPD 2018 to present
-        </h1>
-        <p class="subtitle">
-          <!-- TODO: Change page subtitle -->
-          <h2>Police Data Narrative</h2>
-        </p>
-        <p>The SFPD has a very interesting and varied dataset, the incidents they cover can go from something as simple as shoplifitng all the way to homicide, manslaughter and suicide.
-        The dataset can give us interesting insight into what the SFPD report around the city.<br>
-        What I'm hoping to learn while looking through this dataset is something interesting regarding vehicle larceny, where the most car break ins are and
-      if they are ever resolved. <br>
-        Another interesting theme to look at would be SF deaths, be it through suicide, homicide or manslaughter. More from a morbid curiosity stand point than anhting else.</p>
 
-
-
-
-
-
+        <h2>Why this Data</h2>
+        <p>This data has a little bit of everything, it piques my interest by
+          just looking around and lets me find interesting data about what happens around the city,
+        questions like "why did I buy an expensive lock for my bike?", "why do so many of my friend's cars get broken into?",
+      "why does my university seem to send fairly frequent reports about staying safe?", it also pulls up several questions About
+    mental health in the city, in terms of suicide, it shows when it happens the most and where, it may even show a tendency. Unfortunately
+  it does not really halp answer the why of this, but it might identify areas or people that are in need of care.<br>
+An exploration through this dataset can produce many questions, and might even guide an interested investifator towards some answers. </p>
 
 
       </div>
-      <!-- End page content -->
     </div>
   </section>
+
+
+
+
+
+  <h2 id="about">About</h2>
+
+  <!-- Profile box -->
+  <!-- https://bulma.io/documentation/layout/media-object/ -->
+  <article class="media">
+    <!-- TODO: Replace with profile photo -->
+    <figure class="media-left">
+      <p class="image is-128x128"><img class="is-rounded" src="headshotResized.jpg"></p>
+    </figure>
+
+    <div class="media-content">
+      <div class="content">
+        <!-- TODO: Replace with contact information -->
+        <p>
+          <strong>Enrique Bascur</strong><br/>
+          CS Major, <a href="https://www.usfca.edu/">University of San Francisco</a><br/>
+          <em>Expected Graduation: May 2020</em><br/>
+          <i class="fas fa-envelope"></i> <a href="mailto:ebascur@dons.usfca.edu">ebascur@dons.usfca.edu</a>
+        </p>
+
+        <!-- TODO: Replace with brief biography -->
+        <p>
+          I'm a Computer Science major learning about Data Visualizations, I hope to be able to take what I learn in this course and integrate it with my personal hobbies, such as rock climbing and other mountain related sports.
+        </p>
+
+        <!-- TODO: Replace or remove tags -->
+        <!-- https://bulma.io/documentation/elements/tag/ -->
+        <div class="heading">Skills</div>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">C</span>
+          <span class="tag">Java</span>
+          <span class="tag">GoLang</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">SVG</span>
+        </div>
+      </div>
+    </div>
+  </article>
+  <!-- End profile box -->
 
   <!-- Page footer -->
   <!-- https://bulma.io/documentation/layout/footer/ -->
