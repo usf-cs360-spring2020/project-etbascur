@@ -9,8 +9,8 @@
 
     <!-- Load Bulma from CDN (consider saving it to repository instead) -->
     <!-- https://bulma.io/ -->
-    <link rel="stylesheet" href=https://jenil.github.io/bulmaswatch/pulse/bulmaswatch.min.css>
-
+    <!-- <link rel="stylesheet" href=https://jenil.github.io/bulmaswatch/pulse/bulmaswatch.min.css> -->
+    <link rel="stylesheet" href=https://jenil.github.io/bulmaswatch/solar/bulmaswatch.min.css>
     <!-- Load Font Awesome 5 (free) icons -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
@@ -21,10 +21,8 @@
   <!-- https://bulma.io/documentation/layout/hero/ -->
   <section class="hero is-primary is-bold">
     <div class="hero-body">
-      <div class="container">
-        <!-- TODO: Change title -->
+      <div class="container has-text-centered">
         <h1 class="title">Data Visualization</h1>
-        <!-- TODO: Change subtitle -->
         <h2 class="subtitle">SFPD</h2>
       </div>
     </div>
@@ -32,49 +30,34 @@
   <!-- End page header -->
 
   <!-- Page navigation -->
-  <!-- https://bulma.io/documentation/components/navbar/ -->
-  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
-    <div class="container">
-      <div class="navbar-brand">
-        <a class="navbar-item is-active" href="index.html">
-          <span class="icon"><i class="fas fa-home"></i></span>
-          <span>Home</span>
-        </a>
-
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="main-menu">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="main-menu" class="navbar-menu has-text-weight-medium">
-        <!-- Left navbar items -->
-        <div class="navbar-start">
-          <a class="navbar-item" href="dataSet.html" title="Data Set">
-            <span class="icon"><i class="fas fa-table"></i></span>
-            <span>Data</span>
-          </a>
-
-
-          <a class="navbar-item" href="prototype.html">
-            <span class="icon"><i class="fas fa-map-marked-alt"></i></span>
-            <span>Prototypes</span>
-          </a>
-          </div>
-        </div>
-
-        <!-- Right navbar items -->
-        <div class="navbar-end">
-          <!-- TODO: Update as needed -->
-          <a class="navbar-item" href="about.html" title="About">
-            <span class="icon"><i class="fas fa-tasks"></i></span>
-            <span>About</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <div class="tabs is-boxed is-centered is-medium">
+  <ul>
+    <li class="is-active">
+      <a class="navbar-item" href="index.html">
+        <span class="icon"><i class="fas fa-home"></i></span>
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar-item" href="dataSet.html" title="Data Set">
+        <span class="icon"><i class="fas fa-table"></i></span>
+        <span>Data</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar-item" href="prototype.html">
+        <span class="icon"><i class="fas fa-drafting-compass"></i></span>
+        <span>Prototypes</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar-item" href="about.html" title="About">
+        <span class="icon"><i class="fas fa-user-secret"></i></span>
+        <span>About</span>
+      </a>
+    </li>
+  </ul>
+  </div>
   <!-- End page navigation -->
 
   <section class="section">
