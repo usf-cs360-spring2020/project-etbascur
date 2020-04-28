@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- TODO: Change title -->
+    <title>Beta Prototype</title>
+
+    <!-- Load Bulma from CDN (consider saving it to repository instead) -->
+    <!-- https://bulma.io/ -->
+    <!-- <link rel="stylesheet" href=https://jenil.github.io/bulmaswatch/pulse/bulmaswatch.min.css> -->
+    <link rel="stylesheet" href=https://jenil.github.io/bulmaswatch/solar/bulmaswatch.min.css>
+
+    <!-- D3!!!! -->
+      <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- Load Font Awesome 5 (free) icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="compare.js"></script>
+  </head>
+
+  <body>
+
+  <!-- Page header -->
+  <!-- https://bulma.io/documentation/layout/hero/ -->
+  <section class="hero is-primary is-bold">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">Beta Prototypes</h1>
+      </div>
+    </div>
+  </section>
+  <!-- End page header -->
+
+  <!-- Page navigation -->
+  <div class="tabs is-boxed is-centered is-medium">
+  <ul>
+    <li>
+      <a class="navbar-item" href="index.html">
+        <span class="icon"><i class="fas fa-home"></i></span>
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar-item" href="dataSet.html" title="Data Set">
+        <span class="icon"><i class="fas fa-table"></i></span>
+        <span>Data</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar-item" href="prototype.html">
+        <span class="icon"><i class="fas fa-drafting-compass"></i></span>
+        <span>Prototypes</span>
+      </a>
+    </li>
+    <li class="is-active">
+      <a class="navbar-item" href="beta.html">
+        <span class="icon"><i class="fas fa-pencil-ruler"></i></i></span>
+        <span>Betas</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar-item" href="about.html" title="About">
+        <span class="icon"><i class="fas fa-user-secret"></i></span>
+        <span>About</span>
+      </a>
+    </li>
+  </ul>
+  </div>
+  <!-- End page navigation -->
+
+
+
+  <section class="section">
+    <div class="container">
+      <!-- Begin page content -->
+      <div class="content">
+        <h1 class="title">
+          <!-- TODO: Change page title -->
+          Prototypes
+        </h1>
+        <p class="subtitle">
+          <!-- TODO: Change page subtitle -->
+
+          <h2>BETA PLACEHOLDER</h2>
+
+
+
+          <div class='tableauPlaceholder' id='viz1588059075713' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;JS&#47;JSFTXK3WN&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;JSFTXK3WN' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;JS&#47;JSFTXK3WN&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1588059075713');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='1450px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='1450px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='827px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+          <div class="writeups">
+            <h2>Questions for this visualization</h2>
+            <p>
+              With this visualization I want to see:
+              What is the increase or decrease of the subcategories in the calls made to the police department overall?
+              What is the increase or decrease of the subcategory in the calls made to the police department by neighborhood?
+              Is there any difference in a particular type of subcategory that has increased more due to the shelter in place order? (speculative)
+              Have any of these shifted? (For example: car larceny was higher in tourist areas).
+            </p>
+              <h2>Answers from this visualizations</h2>
+              <p>
+                Overall comparing the same time range from last year to this year, there are considerably less calls about any particular subcategory
+                to the police.
+                However there are some subcategories that seem to be on the rise. Among hem fire calls and arson.
+                There is still more to investigate.
+              </p>
+              <h2>Encoding</h2>
+            <p>
+              The visualization above has two parts, currently they are not connected the way they are intended.
+              <h3>Map</h3>
+              The encoding on the side with the map has the different subcategories divided by color, and the sum of cases in this location by size.
+              Each circle is a location where a case has taken place.
+              They are also divided by year, either 2019 or 2020. <br>
+              <h3>Barchart</h3>
+              For the Barchart the Y-axis contains all the subcategories. The X-axis has a percentage range from -100% to +130% approximately.
+              Each subcategory has a horizontal bar starting at 0 and growing towards either the negative or the positive direction.
+              The chart compares the yeaer 2019 to the year 2020 and gets the percentage difference between the two.
+              </p>
+              <h2>Interactivity</h2>
+              <p>
+              The planned interactivity makes the visualizations much more organized than what is currently on the beta.
+              There will be a dropdown tab to choose which neighborhood will be shown both on the map and the bar chart,
+              there will also be an 'on-click' event that will highlight a particular subcategory in both the map and the bar chart, while making
+              non-matching subcategories disappear on the map.
+              Brushing by year will also be implemented so as to be able to compare the previous year to this year.
+              When the cursor hovers over a point in the map, a tooltip with relevant information will appear.
+              I'm also considering implementing a comparison of a particular subcategory by neighborhood, on the map it would show a particular subcategory
+              on the entire map, and in the bar chart it would change the y-axis from subcategory to neighborhood.
+              </p>
+          </div>
+
+      </div>
+      <!-- End page content -->
+    </div>
+  </section>
+
+  <!-- Page footer -->
+  <!-- https://bulma.io/documentation/layout/footer/ -->
+  <footer class="footer">
+    <div class="content has-text-centered is-size-7">
+      <p>
+        <a href="#top">
+          <span class="fas fa-arrow-up"></span>
+          <span class="has-text-weight-medium">Back to Top</span>
+        </a>
+      </p>
+
+      <p>
+        <!-- TODO: Change to link to your Github repository -->
+        <a href="https://github.com/usf-cs360-spring2020/project-etbascur" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+          <i class="fab fa-github-alt"></i>&nbsp;<strong>Github</strong>
+        </a>
+
+        <a href="https://fontawesome.com/" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+          <i class="fab fa-font-awesome"></i>&nbsp;<strong>FontAwesome</strong>
+        </a>
+
+        <a href="https://bulma.io" class="button is-small">
+          <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128" height="24">
+        </a>
+      </p>
+    </div>
+  </footer>
+  <!-- End page footer -->
+
+  <!-- Mobile menu responsiveness -->
+  <!-- https://bulma.io/documentation/components/navbar/ -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+        });
+      });
+    }
+  });
+  </script>
+  <!-- End mobile menu responsiveness -->
+  </body>
+
+</html>
