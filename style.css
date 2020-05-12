@@ -83,3 +83,7 @@ text, .tooltip {
   border: 1px solid #eee;
   border-radius: 10px;
 }
+
+text.legendOrdinal {
+  color: lightgrey;
+}

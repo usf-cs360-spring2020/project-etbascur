@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- TODO: Change title -->
+    <title>Beta Prototype</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <!-- Load Bulma from CDN (consider saving it to repository instead) -->
+    <!-- https://bulma.io/ -->
+    <!-- <link rel="stylesheet" href=https://jenil.github.io/bulmaswatch/pulse/bulmaswatch.min.css> -->
+    <link rel="stylesheet" href=https://jenil.github.io/bulmaswatch/solar/bulmaswatch.min.css>
+
+    <!-- D3!!!! -->
+      <script src="https://d3js.org/d3.v5.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+
+
+    <!-- Load Font Awesome 5 (free) icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="compare.js"></script>
+    <script src="bars.js"></script>
+
+    </script>
+  </head>
+
+  <body>
+
+  <!-- Page header -->
+  <!-- https://bulma.io/documentation/layout/hero/ -->
+  <section class="hero is-primary is-bold">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">Final visualization</h1>
+      </div>
+    </div>
+  </section>
+  <!-- End page header -->
+
+  <!-- Page navigation -->
+  <div class="tabs is-boxed is-centered is-medium">
+  <ul>
+    <li>
+      <a class="navbar-item" href="index.html">
+        <span class="icon"><i class="fas fa-home"></i></span>
+        <span>Home</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar-item" href="dataSet.html" title="Data Set">
+        <span class="icon"><i class="fas fa-table"></i></span>
+        <span>Data</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar-item" href="prototype.html">
+        <span class="icon"><i class="fas fa-drafting-compass"></i></span>
+        <span>Alphas</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar-item" href="beta.html">
+        <span class="icon"><img src="beta.png"></img></span>
+        <span>Betas</span>
+      </a>
+    </li>
+    <li class="is-active">
+      <a class="navbar-item" href="final.html">
+        <span class="icon"><i class="fas fa-fire-extinguisher"></i></span>
+        <span>Final</span>
+      </a>
+    </li>
+    <li>
+      <a class="navbar-item" href="about.html" title="About">
+        <span class="icon"><i class="fas fa-user-secret"></i></span>
+        <span>About</span>
+      </a>
+    </li>
+  </ul>
+  </div>
+  <!-- End page navigation -->
+
+
+
+  <section class="section">
+    <div class="container">
+      <!-- Begin page content -->
+      <div class="content">
+        <h1 class="title">
+          <!-- TODO: Change page title -->
+          Difference in calls made to SFPD  March 15 to May 10 2019-2020
+        </h1>
+        <p class="subtitle">
+          <!-- TODO: Change page subtitle -->
+
+          <h2>Comparison between regular activities and stay at home mandate</h2>
+
+
+          <svg width="960" height="600" id="vis">
+            <g id="basemap" pointer-events="none"></g>
+
+            <!-- turn off pointer events for certain groups -->
+            <g id="streets" pointer-events="none"></g>
+            <g id="outline" pointer-events="none"></g>
+
+            <g id="police"></g>
+            <g id="tooltip" pointer-events="none"></g>
+            <g id="details" pointer-events="none"></g>
+            <g id="legend" pointer-events="none"></g>
+          </svg>
+
+          <script type="text/javascript">
+            createMap();
+            d3.csv("policecorona.csv").then(barchart);
+          </script>
+        </br>
+          <svg width="960" height="600" id="bars">
+          </svg>
+
+          <figcaption>
+            Source: </br>
+            Made by:
+          </figcaption>
+
+
+
+            <h2>Feedback</h2>
+            <p>I was told I was using too many colors and that the visualization was crowded, the interactivity helped fix that.<br>
+            </p>
+            <h2>About the Visualization</h2>
+            <p>The visualization shows a comparison between March 15 and May 10 for some Incident Subcategories, I chose to use only a few
+            subcategories for two reasons, the first is speed of loading data to the page, the second to illustrate which type of calls had
+            been reduced and which ones were on the rise. </p>
+
+            <h2>Encoding</h2>
+
+            <h3>Map</h3>
+            <p>The encoding on the map is simple, it's a general map of San Francisco, I did not include streets as they are not necessay and take a considerable time to load.
+            Within the map circles appear where the incidient was reported, as either green or purple circles representing the year 2019 and 2020 respectively.  </p>
+
+            <h3>Diverging Bar Chart</h3>
+            <p>For the bar chart, the numbers on the x-axis are meant to be percentages, to the right an increase of Incidents in this subcategory for 2020 with
+            respect to 2019, to the left an decrease of the Incident Subcategory. The name of each subcategory is above the bar theat represents it.</p>
+
+            <h2>Interactivity</h2>
+            <p>For the interactivity, when clicking on any of the bars, its information shows up on the map, if the bar is clicked again the information disappears.
+            A user can accumulate different bars.<br>
+            There is also a tool tip that appears when the mouse hovers over a circle, giving information about the Neighborhood it's located in, the year it represents and
+            the incident subcategory it represents.</p>
+
+            <h2>Findings</h2>
+            <p>In my narrative I was curious to see why so many sirens were going off near my apartment, I live near a police department and figured they were police sirens,
+            looking at the data I can see that they are more likely to be fire department sirens, as there has been a significant increase in Arson cases and fire reports.
+            Some outside fires are considered arson, however it could be interesting to see if arson is being commited as part of insurance fraud.<br>
+            There has also been  an increase in attempted car theft and in car jacking.<br>
+            An interesting find was that reesidential burglaries have gone down significantly since everyone has been staying home and commercial burglaries have been on the rise since
+            many commercial locations are currently empty. <br>
+            Larceny in general has gone down, larceny from vehicles has gone down significantly since the most common places to get your car broken into were downtown SOMA area and the
+            tourist areas, such as the piers, since many people are not commuting downtown to work, or being tourists lately, these have gone down.
+            <br>
+            Finally calls that require people to stand close to you, such as pickpocketing, are very low, since we are practicing social distancing.
+          </p>
+
+          </div>
+
+      </div>
+      <!-- End page content -->
+    </div>
+  </section>
+
+  <!-- Page footer -->
+  <!-- https://bulma.io/documentation/layout/footer/ -->
+  <footer class="footer">
+    <div class="content has-text-centered is-size-7">
+      <p>
+        <a href="#top">
+          <span class="fas fa-arrow-up"></span>
+          <span class="has-text-weight-medium">Back to Top</span>
+        </a>
+      </p>
+
+      <p>
+        <!-- TODO: Change to link to your Github repository -->
+        <a href="https://github.com/usf-cs360-spring2020/project-etbascur" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+          <i class="fab fa-github-alt"></i>&nbsp;<strong>Github</strong>
+        </a>
+
+        <a href="https://fontawesome.com/" class="button is-small" style="padding-left: 1em; padding-right: 1em;">
+          <i class="fab fa-font-awesome"></i>&nbsp;<strong>FontAwesome</strong>
+        </a>
+
+        <a href="https://bulma.io" class="button is-small">
+          <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128" height="24">
+        </a>
+      </p>
+    </div>
+  </footer>
+  <!-- End page footer -->
+
+  <!-- Mobile menu responsiveness -->
+  <!-- https://bulma.io/documentation/components/navbar/ -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+        });
+      });
+    }
+  });
+  </script>
+  <!-- End mobile menu responsiveness -->
+  </body>
+
+</html>
